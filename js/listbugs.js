@@ -1,4 +1,4 @@
-import { obtenerBugs } from './storage.js';
+import { obtenerBugs, eliminarBug } from './storage.js';
 
 const containerBugs = document.getElementById('containerBugs');
 const filtrosContainer = document.getElementById('filtrosContainer');
@@ -28,6 +28,19 @@ const crearFiltros = () => {
 };
 
 
+const confirmarEliminacion = (index, callback) => {
+    if (confirm('¿Estás seguro de que deseas eliminar este bug?')) {
+        callback();
+    }
+};
+
+
+const eliminarBugYActualizar = (index) => {
+    eliminarBug(index);
+    cargarBugs();
+};
+
+
 const cargarBugs = () => {
     containerBugs.innerHTML = '';
 
@@ -44,7 +57,7 @@ const cargarBugs = () => {
         return;
     }
 
-    bugs.forEach(bug => {
+    bugs.forEach((bug, index) => {
         const card = document.createElement('div');
         card.className = 'bug-card';
 
@@ -55,7 +68,15 @@ const cargarBugs = () => {
       <div class="bug-title">${bug.nombreJuego} • ${bug.plataforma} • ${bug.tipo}</div>
       <div class="bug-description">${bug.descripcion}</div>
       <div class="bug-date">${bug.fecha}</div>
+      <button class="btn-delete" data-index="${index}">🗑️ Eliminar</button>
     `;
+
+        const btnDelete = card.querySelector('.btn-delete');
+        btnDelete.addEventListener('click', () => {
+            confirmarEliminacion(index, () => {
+                eliminarBugYActualizar(index);
+            });
+        });
 
         containerBugs.appendChild(card);
     });

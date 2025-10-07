@@ -13,6 +13,12 @@ export const agregarBug = (bug) => {
     guardarBugs(bugs);
 };
 
+export const eliminarBug = (index) => {
+    const bugs = obtenerBugs();
+    bugs.splice(index, 1);
+    guardarBugs(bugs);
+};
+
 export const limpiarBugs = () => {
     localStorage.removeItem('bugs');
 };

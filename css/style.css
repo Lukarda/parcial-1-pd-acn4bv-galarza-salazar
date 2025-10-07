@@ -355,6 +355,30 @@ body::before {
     color: var(--text-secondary);
 }
 
+.btn-delete {
+    margin-top: 12px;
+    padding: 8px 16px;
+    background: var(--color-alta);
+    color: white;
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.3s;
+    width: 100%;
+}
+
+.btn-delete:hover {
+    background: #dc2626;
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(239, 68, 68, 0.4);
+}
+
+.btn-delete:active {
+    transform: scale(0.98);
+}
+
 .empty-state {
     text-align: center;
     padding: 60px var(--spacing-lg);

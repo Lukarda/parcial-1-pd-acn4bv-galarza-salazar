@@ -15,7 +15,7 @@ const crearFiltros = () => {
 
     filtros.forEach(filtro => {
         const btn = document.createElement('button');
-        btn.className = btn-filter ${filtro.clase};
+        btn.className = `btn-filter ${filtro.clase}`;
         btn.textContent = filtro.nombre;
 
         btn.addEventListener('click', () => {
@@ -48,14 +48,14 @@ const cargarBugs = () => {
         const card = document.createElement('div');
         card.className = 'bug-card';
 
-        const badgeClass = badge-${bug.gravedad.toLowerCase()};
+        const badgeClass = `badge-${bug.gravedad.toLowerCase()}`;
 
-        card.innerHTML =
-            <div class="badge ${badgeClass}">PRIORIDAD ${bug.gravedad.toUpperCase()}</div>
-        <div class="bug-title">${bug.nombreJuego} • ${bug.plataforma} • ${bug.tipo}</div>
-        <div class="bug-description">${bug.descripcion}</div>
-        <div class="bug-date">${bug.fecha}</div>
-        ;
+        card.innerHTML = `
+      <div class="badge ${badgeClass}">PRIORIDAD ${bug.gravedad.toUpperCase()}</div>
+      <div class="bug-title">${bug.nombreJuego} • ${bug.plataforma} • ${bug.tipo}</div>
+      <div class="bug-description">${bug.descripcion}</div>
+      <div class="bug-date">${bug.fecha}</div>
+    `;
 
         containerBugs.appendChild(card);
     });

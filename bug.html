@@ -1,10 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BugLog</title>
 </head>
 <body>
 
+<nav class="navbar">
+    <div class="navbar-content">
+        <div class="navbar-brand">
+            <a href="index.html" class="brand-text">BugLog</a>
+        </div>
+        <div class="navbar-links">
+            <a href="index.html" class="nav-link">Reportar Bug</a>
+            <a href="bugs.html" class="nav-link">Historial</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+
+    <div id="filtrosContainer" class="filtros-container"></div>
+
+
+    <div id="containerBugs" class="bugs-list"></div>
+</div>
+
+<script type="module" src="js/listbugs.js"></script>
 </body>
 </html>

@@ -1,10 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BugLog</title>
 </head>
 <body>
 
+<nav class="navbar">
+    <div class="navbar-content">
+        <div class="navbar-brand">
+            <a href="index.html" class="brand-text">BugLog</a>
+        </div>
+        <div class="navbar-links">
+            <a href="index.html" class="nav-link">Reportar Bug</a>
+            <a href="bugs.html" class="nav-link">Historial</a>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container">
+
+    <div class="card">
+        <form id="bugForm">
+
+            <div class="form-group">
+                <input
+                        type="text"
+                        id="nombreJuego"
+                        class="input"
+                        placeholder="¿En qué juego apareció?"
+                        required>
+            </div>
+
+
+            <div class="form-group">
+                <label for="plataforma" class="label">Plataforma</label>
+                <select id="plataforma" class="select" required>
+                    <option value="">Seleccioná una plataforma</option>
+                    <option value="PC">PC</option>
+                    <option value="PlayStation 5">PlayStation 5</option>
+                    <option value="PlayStation 4">PlayStation 4</option>
+                    <option value="Xbox Series S/X">Xbox Series S/X</option>
+                    <option value="Nintendo Switch">Nintendo Switch</option>
+                    <option value="Nintendo Switch 2">Nintendo Switch 2</option>
+                    <option value="Android">Android</option>
+                    <option value="iOS">iOS</option>
+                </select>
+            </div>
+
+
+            <div class="form-group">
+                <label for="tipoBug" class="label">Tipo de Bug</label>
+                <select id="tipoBug" class="select" required>
+                    <option value="">Seleccioná un tipo de bug</option>
+                    <option value="Gráfico">Gráfico</option>
+                    <option value="Audio">Audio</option>
+                    <option value="Gameplay">Gameplay</option>
+                </select>
+            </div>
+
+
+            <div class="form-group">
+                <label class="label">Gravedad</label>
+                <div class="radio-group">
+                    <label class="radio-label">
+                        <input type="radio" name="gravedad" value="Baja" required>
+                        <span>Baja</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="gravedad" value="Media" required>
+                        <span>Media</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="gravedad" value="Alta" required>
+                        <span>Alta</span>
+                    </label>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+          <textarea
+                  id="descripcion"
+                  class="textarea"
+                  placeholder="Contanos qué pasó..."
+                  rows="5"
+                  required></textarea>
+            </div>
+
+
+            <div class="button-group">
+                <a href="bugs.html" class="btn btn-secondary">Consultar historial</a>
+                <button type="submit" class="btn btn-primary">Enviar reporte</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script type="module" src="js/form.js"></script>
 </body>
 </html>

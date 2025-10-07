@@ -33,6 +33,22 @@ body {
     color: var(--text-primary);
     line-height: 1.6;
     min-height: 100vh;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../assets/background.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.4;
+    z-index: -1;
 }
 
 .navbar {
@@ -370,5 +386,3 @@ body {
         flex-direction: column-reverse;
     }
 }
-
-dame el codigo completo del style.css con eso implementado para copiar y pegar
